@@ -14,8 +14,10 @@ class Program(QWidget, Ui_Form):
         self.setupUi(self)
         self.setGeometry(100, 100, 500, 500)
         self.entercode = 0
+
         self.x = 0
         self.y = 0
+
         self.pushButton.clicked.connect(self.pushbtn)
 
     def paintEvent(self, event):
@@ -25,7 +27,7 @@ class Program(QWidget, Ui_Form):
             qp.begin(self)
 
             x = randint(5, 250)
-            color = QColor(randint(0, 255), randint(0, 255), randint(0, 255))
+            color = QColor(255, 255, 0)
             qp.setBrush(color)
             qp.drawEllipse(self.x - x / 2, self.y - x / 2, x, x)
             qp.end()
